@@ -11,9 +11,10 @@ sudo ln -sf "$OWN_KEYS_DIR/releasekey.x509.pem" "$OWN_KEYS_DIR/testkey.x509.pem"
 repo init -u https://github.com/LineageOS/android.git -b lineage-18.1 --git-lfs
 
 rm -rf .repo/local_manifests
+rm -rf external/chromium-webview
 git clone -q https://github.com/bimuafaq/local_manifests .repo/local_manifests
 
-/opt/crave/resync.sh || /opt/crave/resync.sh
+/opt/crave/resync.sh
 .repo/local_manifests/patches/patches_apply.sh
 
 source build/envsetup.sh
