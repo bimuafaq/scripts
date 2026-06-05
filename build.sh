@@ -18,4 +18,5 @@ git clone -q https://github.com/bimuafaq/local_manifests .repo/local_manifests
 .repo/local_manifests/patches/patches_apply.sh
 
 source build/envsetup.sh
-brunch RMX2185 user
+lunch lineage_RMX2185-user
+cmka bacon
