@@ -8,7 +8,7 @@ export OWN_KEYS_DIR="$PWD/vendor_keys"
 sudo ln -sf "$OWN_KEYS_DIR/releasekey.pk8" "$OWN_KEYS_DIR/testkey.pk8"
 sudo ln -sf "$OWN_KEYS_DIR/releasekey.x509.pem" "$OWN_KEYS_DIR/testkey.x509.pem"
 
-repo init -u https://github.com/LineageOS/android.git -b lineage-18.1 --git-lfs
+repo init -u https://github.com/LineageOS/android.git -b lineage-18.1 --git-lfs --depth=1
 
 rm -rf .repo/local_manifests
 rm -rf external/chromium-webview
@@ -18,5 +18,5 @@ git clone -q https://github.com/bimuafaq/local_manifests .repo/local_manifests
 .repo/local_manifests/patches/patches_apply.sh
 
 source build/envsetup.sh
-lunch lineage_RMX2185-user
+breakfast RMX2185 user
 cmka bacon
