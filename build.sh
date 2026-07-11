@@ -15,6 +15,7 @@ git clone -q https://github.com/bimuafaq/local_manifests .repo/local_manifests
 
 for i in 1 2; do /opt/crave/resync.sh; done
 .repo/local_manifests/patches/patches_apply.sh
+
 rm -rf external/chromium-webview
 git clone -q --depth=1 -b master https://github.com/LineageOS/android_external_chromium-webview external/chromium-webview
 
