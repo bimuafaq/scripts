@@ -13,7 +13,8 @@ repo init -u https://github.com/LineageOS/android.git -b lineage-18.1 --git-lfs 
 rm -rf .repo/local_manifests
 git clone -q https://github.com/bimuafaq/local_manifests .repo/local_manifests
 
-[ -L external/chromium-webview/Android.mk ] && rm -rf external/chromium-webview
+[ -L external/chromium-webview/Android.mk ] && rm -rf external/chromium-webview && git clone -q --depth=1 -b master https://github.com/LineageOS/android_external_chromium-webview external/chromium-webview
+
 for i in 1 2; do /opt/crave/resync.sh; done
 .repo/local_manifests/patches/patches_apply.sh
 
