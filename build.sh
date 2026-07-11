@@ -21,4 +21,4 @@ git clone -q --depth=1 -b master https://github.com/LineageOS/android_external_c
 
 source build/envsetup.sh
 lunch lineage_RMX2185-user
-mka bacon
+cmka bacon
