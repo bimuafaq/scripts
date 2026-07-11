@@ -18,5 +18,5 @@ for i in 1 2; do /opt/crave/resync.sh; done
 .repo/local_manifests/patches/patches_apply.sh
 
 source build/envsetup.sh
-breakfast RMX2185 user
+lunch lineage_RMX2185-user
 cmka bacon
