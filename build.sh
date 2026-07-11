@@ -14,7 +14,7 @@ rm -rf .repo/local_manifests
 rm -rf external/chromium-webview
 git clone -q https://github.com/bimuafaq/local_manifests .repo/local_manifests
 
-/opt/crave/resync.sh
+for i in 1 2; do /opt/crave/resync.sh; done
 .repo/local_manifests/patches/patches_apply.sh
 
 source build/envsetup.sh
