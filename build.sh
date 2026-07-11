@@ -19,4 +19,4 @@ for i in 1 2; do /opt/crave/resync.sh; done
 
 source build/envsetup.sh
 lunch lineage_RMX2185-user
-cmka bacon
+if [ -d out ]; then cmka bacon; else mka bacon; fi
