@@ -10,14 +10,13 @@ sudo ln -sf "$OWN_KEYS_DIR/releasekey.x509.pem" "$OWN_KEYS_DIR/testkey.x509.pem"
 
 repo init -u https://github.com/LineageOS/android.git -b lineage-18.1 --depth=1
 
-rm -rf .repo/local_manifests external/chromium-webview
+rm -rf .repo/local_manifests
 git clone -q https://github.com/bimuafaq/local_manifests .repo/local_manifests
+
+git -C .repo/manifests am "$(pwd)/.repo/local_manifests/patches/0001-manifest-switch-to-old-chromiun-webview.patch"
 
 for i in 1 2; do /opt/crave/resync.sh; done
 .repo/local_manifests/patches/patches_apply.sh
-
-rm -rf external/chromium-webview
-git clone -q --depth=1 -b master https://github.com/LineageOS/android_external_chromium-webview external/chromium-webview
 
 source build/envsetup.sh
 lunch lineage_RMX2185-user
