@@ -14,6 +14,9 @@ git -C .repo/manifests am "$(pwd)/.repo/local_manifests/patches/0001-manifest-sw
 
 for i in 1 2; do /opt/crave/resync.sh; done
 
+rm -rf packages/apps/FMRadio
+git clone -q https://github.com/bimuafaq/android_packages_apps_FMRadio packages/apps/FMRadio -b lineage-18.1 --depth=1
+
 source build/envsetup.sh
 lunch lineage_RMX2185-userdebug
 mka bacon
