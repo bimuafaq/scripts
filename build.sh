@@ -24,4 +24,4 @@ git clone -q https://github.com/LineageOS/android_external_chromium-webview exte
 
 source build/envsetup.sh
 lunch lineage_RMX2185-user
-cmka bacon # && if [ ! -f out/target/product/RMX2185/system/product/app/webview/webview.apk ]; then cmka bacon; fi
+cmka bacon
