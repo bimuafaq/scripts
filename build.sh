@@ -22,6 +22,9 @@ rom/lineageos-18.1/patches/patches_apply.sh
 rm -rf external/chromium-webview
 git clone -q https://github.com/LineageOS/android_external_chromium-webview external/chromium-webview -b master --depth=1
 
+rm -rf vendor/extra
+git clone -q https://github.com/bimuafaq/android_vendor_extra vendor/extra
+
 source build/envsetup.sh
 lunch lineage_RMX2185-user
 cmka bacon
