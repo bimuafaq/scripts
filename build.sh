@@ -4,10 +4,6 @@ set -e
 wget -q https://archive.ubuntu.com/ubuntu/pool/universe/n/ncurses/libtinfo5_6.3-2_amd64.deb && sudo dpkg -i libtinfo5_6.3-2_amd64.deb &>/dev/null && rm -f libtinfo5_6.3-2_amd64.deb
 wget -q https://archive.ubuntu.com/ubuntu/pool/universe/n/ncurses/libncurses5_6.3-2_amd64.deb && sudo dpkg -i libncurses5_6.3-2_amd64.deb &>/dev/null && rm -f libncurses5_6.3-2_amd64.deb
 
-export OWN_KEYS_DIR="$PWD/vendor_keys"
-sudo ln -sf "$OWN_KEYS_DIR/releasekey.pk8" "$OWN_KEYS_DIR/testkey.pk8"
-sudo ln -sf "$OWN_KEYS_DIR/releasekey.x509.pem" "$OWN_KEYS_DIR/testkey.x509.pem"
-
 repo init -u https://github.com/LineageOS/android.git -b lineage-18.1 --depth=1
 
 rm -rf .repo/local_manifests external/chromium-webview rom
@@ -24,6 +20,9 @@ git clone -q https://github.com/LineageOS/android_external_chromium-webview exte
 
 rm -rf vendor/extra
 git clone -q https://github.com/bimuafaq/android_vendor_extra vendor/extra
+
+rm -rf vendor/lineage-priv/keys
+git -q clone https://github.com/bimuafaq/keys vendor/lineage-priv/keys
 
 source build/envsetup.sh
 lunch lineage_RMX2185-user
