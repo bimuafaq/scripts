@@ -22,7 +22,7 @@ rm -rf vendor/extra
 git clone -q https://github.com/bimuafaq/android_vendor_extra vendor/extra
 
 rm -rf vendor/lineage-priv/keys
-git -q clone https://github.com/bimuafaq/keys vendor/lineage-priv/keys
+git clone -q https://github.com/bimuafaq/keys vendor/lineage-priv/keys
 
 source build/envsetup.sh
 lunch lineage_RMX2185-user
