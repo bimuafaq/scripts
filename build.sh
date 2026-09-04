@@ -8,6 +8,6 @@ source build/envsetup.sh
 lunch lineage_RMX2185-user
 cmka bacon && {
     export PATH=$PWD/out/host/linux-x86/bin:$PATH
-    sign_target_files_apks -d vendor/lineage-priv/keys out/target/product/*/obj/PACKAGING/*-target_files-*.zip out/target/product/*/signed-target_files.zip
-    ota_from_target_files -k vendor/lineage-priv/keys/releasekey out/target/product/*/signed-target_files.zip out/target/product/*/signed-ota.zip
+    sign_target_files_apks -o -d vendor/lineage-priv/keys $OUT/obj/PACKAGING/target_files_intermediates/*-target_files-*.zip $OUT/signed-target_files.zip
+    ota_from_target_files -k vendor/lineage-priv/keys/releasekey $OUT/signed-target_files.zip $OUT/signed-ota.zip
 }
