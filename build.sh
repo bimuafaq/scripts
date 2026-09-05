@@ -13,7 +13,6 @@ cmka bacon && {
     $OUT/obj/PACKAGING/target_files_intermediates/*-target_files-*.zip \
     $OUT/signed-target_files.zip
   ota_from_target_files -k vendor/lineage-priv/keys/releasekey \
-    --block --backup=false \
     $OUT/signed-target_files.zip \
     $OUT/lineage-18.1-$(date +%Y%m%d)-UNOFFICIAL-RMX2185-signed.zip
 }
