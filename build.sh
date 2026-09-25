@@ -5,7 +5,7 @@ wget -q https://archive.ubuntu.com/ubuntu/pool/universe/n/ncurses/libtinfo5_6.3-
 wget -q https://archive.ubuntu.com/ubuntu/pool/universe/n/ncurses/libncurses5_6.3-2_amd64.deb && sudo dpkg -i libncurses5_6.3-2_amd64.deb &>/dev/null && rm -f libncurses5_6.3-2_amd64.deb
 
 rm -rf prebuilts/remoteexecution-client/{latest,live}
- wget -qO- https://github.com/bimuafaq/android_vendor_extra/releases/download/reclient/reclient.tar.gz | tar -xz -C prebuilts/remoteexecution-client/
+wget -qO- https://github.com/bimuafaq/android_vendor_extra/releases/download/reclient/reclient.tar.gz | tar -xz -C prebuilts/remoteexecution-client/
 
 source build/envsetup.sh
 lunch lineage_RMX2185-user
