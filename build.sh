@@ -16,5 +16,5 @@ sign_release_keys() {
 }
 
 source build/envsetup.sh
-lunch lineage_RMX2185-userdebug
+breakfast RMX2185
 cmka bacon # && sign_release_keys
