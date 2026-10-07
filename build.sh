@@ -4,9 +4,7 @@ set -e
 wget -q https://archive.ubuntu.com/ubuntu/pool/universe/n/ncurses/libtinfo5_6.3-2_amd64.deb && sudo dpkg -i libtinfo5_6.3-2_amd64.deb &>/dev/null && rm -f libtinfo5_6.3-2_amd64.deb
 wget -q https://archive.ubuntu.com/ubuntu/pool/universe/n/ncurses/libncurses5_6.3-2_amd64.deb && sudo dpkg -i libncurses5_6.3-2_amd64.deb &>/dev/null && rm -f libncurses5_6.3-2_amd64.deb
 
-source build/envsetup.sh
-lunch lineage_RMX2185-user
-cmka bacon && {
+sign_release_keys() {
   mka otatools
   export PATH=$PWD/out/host/linux-x86/bin:$PATH
   sign_target_files_apks -o -d vendor/lineage-priv/keys \
@@ -16,3 +14,7 @@ cmka bacon && {
     $OUT/signed-target_files.zip \
     $OUT/lineage-18.1-$(date +%Y%m%d)-UNOFFICIAL-RMX2185-signed.zip
 }
+
+source build/envsetup.sh
+lunch lineage_RMX2185-userdebug
+cmka bacon # && sign_release_keys
