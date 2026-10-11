@@ -4,7 +4,7 @@ set -e
 wget -q https://archive.ubuntu.com/ubuntu/pool/universe/n/ncurses/libtinfo5_6.3-2_amd64.deb && sudo dpkg -i libtinfo5_6.3-2_amd64.deb &>/dev/null && rm -f libtinfo5_6.3-2_amd64.deb
 wget -q https://archive.ubuntu.com/ubuntu/pool/universe/n/ncurses/libncurses5_6.3-2_amd64.deb && sudo dpkg -i libncurses5_6.3-2_amd64.deb &>/dev/null && rm -f libncurses5_6.3-2_amd64.deb
 
-sign_release_keys() {
+resign_ota() {
   mka otatools
   export PATH=$PWD/out/host/linux-x86/bin:$PATH
   sign_target_files_apks -o -d vendor/lineage-priv/keys \
@@ -17,4 +17,4 @@ sign_release_keys() {
 
 source build/envsetup.sh
 breakfast RMX2185 user
-cmka bacon && sign_release_keys
+cmka bacon && resign_ota
